@@ -219,19 +219,19 @@ print(f"监控平台数量: {len(CONFIG['PLATFORMS'])}")
 
 
 # === 工具函数 ===
-def get_beijing_time():
+def get_current_time():
     """获取北京时间"""
-    return datetime.now(pytz.timezone("Asia/Shanghai"))
+    return datetime.now(pytz.timezone("Europe/Berlin"))
 
 
 def format_date_folder():
     """格式化日期文件夹"""
-    return get_beijing_time().strftime("%Y年%m月%d日")
+    return get_current_time().strftime("%Y-%m-%d")
 
 
 def format_time_filename():
     """格式化时间文件名"""
-    return get_beijing_time().strftime("%H时%M分")
+    return get_current_time().strftime("%H:%M")
 
 
 def clean_title(title: str) -> str:
